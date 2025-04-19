@@ -1,10 +1,12 @@
 <h1>Articles</h1>
+
+<%= link_to "New Article", new_article_path %> <!-- ✅ Add this -->
+
 <ul>
-<% @articles.each do |article|%>
+  <% @articles.each do |article| %>
     <li>
-    <a href="/articles/<%= article.id%>">
-    <%= article.title %>
-    </a>
+      <%= link_to article.title, article %> <!-- ✅ This is good -->
     </li>
-    <% end %>
+  <% end %>
 </ul>
+<%= link_to "New Article", new_article_path%>
